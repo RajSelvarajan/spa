@@ -12,8 +12,7 @@ function LunchCheckController($scope) {
   $scope.lunchMenuStyle = "";//OPTIONAL WORK
 
   $scope.displayMessage = function () {
-    var messageString = "";
-    var separator =/\s*,\s*/;
+    var separator =",";
     var lunchMenuCount = calculateLunchMenuCount($scope.lunchMenu,separator);
     if (lunchMenuCount==0) {
       $scope.lunchMessage ="Please enter data first.";
@@ -31,6 +30,7 @@ function LunchCheckController($scope) {
       $scope.lunchMenuStyle = "border:1px solid green;";
     }
   };
+
   //  *** Please note that empty items are not considered towards the count ***
   function calculateLunchMenuCount(string, separator) {
     var lunchMenuArray = string.split(separator);
